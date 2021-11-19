@@ -9,7 +9,7 @@ which were used in e.g. the following papers for estimating the energy content o
 > Behjat, H. and Larsson, M., 2020. Spectral characterization of functional MRI data on voxel-resolution cortical graphs. In Proc. IEEE Int.
 Symp. Biomed. Imaging, pp. 558–562. [paper](https://arxiv.org/abs/1910.09507)
 
-> Behjat, H. and Larsson, M., 2021. Characterization of spatial dynamics of fMRI data in white matter using diffusion-informed white matter harmonics. In Proc. IEEE Int. Symp. Biomed. Imaging, pp. 1586-1590. [paper](https://doi.org/10.1101/2020.10.28.359125)
+> Behjat, H., et al., 2021. Characterization of spatial dynamics of fMRI data in white matter using diffusion-informed white matter harmonics. In Proc. IEEE Int. Symp. Biomed. Imaging, pp. 1586-1590. [paper](https://doi.org/10.1101/2020.10.28.359125)
 
 The kernels are defined on the range 0 to 2, which are the lower and upper bounds for eigenvalues of any given normalized Laplacian matrix defined as `L = I - D^{-1/2} A D^{-1/2}`, where `A` and `D` denote the graph adjacency matrix and degree matrix, respectively, and `I` denotes the identity matrix. The kernels at the lower end of the spectrum are narrower since many graph signals (in particular, fMRI voxel-wise graph signals) exhibit most of the energy content in that part of the spectrum, and thus, such narrow kernels enable more accurate estimation of signal energy profiles in this part of the spectrum. 
 
@@ -20,4 +20,9 @@ For large graphs, graph signals can not be brought into the spectral domain via 
 > Hammond, D.K., et al, 2011. Wavelets on graphs via spectral graph theory. Applied and Computational Harmonic Analysis, 30(2), pp. 129-150. [paper](https://doi.org/10.1016/j.acha.2010.04.005) (see Section 6) 
 
 To do this, one should use a suitable Chebyshev polynomial order to ensure that the approximated kernels also satisfy the Parseval frame condition. File `mats/sosks57_chebyOrds.mat` provides suitable polynomial orders for each kernel such that the resulting set of approximated system of spectral kernels do not deviate from the Parseval frame condition by no more than 0.01 at any point across the spectral range 0 to 2. 
+
+Script `construct_multires_uniform_tight_frame.m` shows how this 57 system of spectral kernels were generated, in part using the signal-adapted tight frame design theory proposed in:
+
+> Behjat, H., et al., 2016. Signal-adapted tight frames on graphs. IEEE Trans. Signal Process., 64(22), pp.6017-6029. [paper](https://bme.lth.se/fileadmin/biomedicalengineering/Personal_folders/Hamid_Behjat/HBehjat_TSP2016.pdf)
+
     
