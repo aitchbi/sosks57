@@ -21,7 +21,7 @@ For large graphs, graph signals can not be represented in the spectral domain vi
 
 > Hammond, D.K., et al, 2011. Wavelets on graphs via spectral graph theory. Applied and Computational Harmonic Analysis, 30(2), pp. 129-150. [paper](https://doi.org/10.1016/j.acha.2010.04.005) (see Section 6) 
 
-To do this, one should use a suitable Chebyshev polynomial order to ensure that the approximated kernels also satisfy the Parseval frame condition. File `mats/sosks57_chebyOrds.mat` provides suitable polynomial orders for each of the 57 kernels such that the resulting set of approximated system of spectral kernels do not deviate from the Parseval frame condition by more than 0.01 at any point across the spectral range 0 to 2.  
+To do this, one should use a suitable Chebyshev polynomial order to ensure that i) each approximated polynomial matches the desired kernel well, ii) all the kernels togetehr satisfy the Parseval frame condition to an acceptable degree. File `mats/sosks57_chebyOrds.mat` provides suitable polynomial orders for each of the 57 kernels such that the resulting set of approximated system of spectral kernels do not deviate from the Parseval frame condition by more than 0.01 at any point across the spectral range 0 to 2.  
 
 ---
 
